@@ -992,5 +992,36 @@
         </div>
       </main>
     </div>
+    <script>
+      // Smooth scroll when clicking scroll arrow
+      document.addEventListener("DOMContentLoaded", function () {
+        const scrollIndicator = document.querySelector(".scroll-indicator");
+        const scrollArrow = document.querySelector(".scroll-arrow");
+
+        if (scrollIndicator && scrollArrow) {
+          const handleScroll = function () {
+            const socialSection = document.querySelector(".social-section");
+            if (socialSection) {
+              socialSection.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          };
+
+          // Click event
+          scrollIndicator.addEventListener("click", handleScroll);
+          scrollArrow.addEventListener("click", handleScroll);
+
+          // Keyboard accessibility (Enter or Space)
+          scrollIndicator.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              handleScroll();
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>
