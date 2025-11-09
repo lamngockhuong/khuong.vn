@@ -7,12 +7,90 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Khương</title>
+    <title>Khương - Software Engineer & Tech Enthusiast</title>
+    <meta
+      name="description"
+      content="Xin chào, mình là Khương - một Software Engineer đam mê công nghệ. Kết nối với mình qua GitHub, LinkedIn, Email và các nền tảng khác."
+    />
+    <meta
+      name="keywords"
+      content="Khương, Lâm Ngọc Khương, Software Engineer, Engineer, Developer, Programmer, GitHub, Tech Blog, Vietnam Engineer"
+    />
+    <meta name="author" content="Lâm Ngọc Khương" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://khuong.dev" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://khuong.dev" />
+    <meta
+      property="og:title"
+      content="Khương - Software Engineer & Tech Enthusiast"
+    />
+    <meta
+      property="og:description"
+      content="Xin chào, mình là Khương - một Software Engineer đam mê công nghệ. Kết nối với mình qua GitHub, LinkedIn, Email và các nền tảng khác."
+    />
+    <meta property="og:image" content="https://khương.vn/profile.png" />
+    <meta property="og:locale" content="vi_VN" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://khương.vn" />
+    <meta
+      property="twitter:title"
+      content="Khương - Software Engineer & Tech Enthusiast"
+    />
+    <meta
+      property="twitter:description"
+      content="Xin chào, mình là Khương - một Software Engineer đam mê công nghệ. Kết nối với mình qua GitHub, LinkedIn, Email và các nền tảng khác."
+    />
+    <meta property="twitter:image" content="https://khương.vn/profile.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Khuong" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Lâm Ngọc Khương",
+        "alternateName": "Khương",
+        "url": "https://khương.vn",
+        "image": "https://khương.vn/profile.png",
+        "sameAs": [
+          "https://github.com/lamngockhuong",
+          "https://linkedin.com/in/lamngockhuong",
+          "https://facebook.com/lamngockhuong",
+          "https://x.com/lamngockhuong",
+          "https://instagram.com/lamngockhuong",
+          "https://t.me/lamngockhuong",
+          "https://dev.to/lamngockhuong",
+          "https://strava.com/athletes/lamngockhuong",
+          "https://dev.ngockhuong.com"
+        ],
+        "jobTitle": "Software Engineer",
+        "email": "hi@khuong.dev",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Tech Industry"
+        }
+      }
+    </script>
     <style>
       /* Reset & Base */
       * {
@@ -741,95 +819,133 @@
           <span class="animated-char">n</span>
           <span class="animated-char">g</span>
         </h1>
-        <ul class="nav-links">
-          <li class="nav-item">
-            <a href="https://khuong.dev" target="_blank">
-              <span class="heart">♥️</span>
-            </a>
-          </li>
-        </ul>
+        <nav aria-label="Main navigation">
+          <ul class="nav-links">
+            <li class="nav-item">
+              <a
+                href="https://khuong.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit Khương's website"
+              >
+                <span class="heart" role="img" aria-label="Heart">♥️</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
 
-      <div class="main-content">
+      <main class="main-content">
         <div class="wrapper">
           <h1 class="heading">Xin chào!</h1>
           <p class="intro">
             Mình là
-            <a href="https://facebook.com/lamngockhuong" target="_blank">
+            <a
+              href="https://facebook.com/lamngockhuong"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <strong class="name">Khương</strong> </a
             >. <br />Làn gió nào đưa bạn tới đây thế ^_^
           </p>
 
-          <div class="scroll-indicator">
+          <div
+            class="scroll-indicator"
+            role="button"
+            tabindex="0"
+            aria-label="Scroll down for more content"
+          >
             <div class="scroll-arrow"></div>
           </div>
 
-          <div class="social-section">
+          <section class="social-section" aria-label="Social media links">
             <h2 class="social-title">Kết nối với mình</h2>
-            <div class="social-links">
-              <a
-                href="mailto:hi@khuong.dev"
-                class="social-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span class="social-icon">📧</span>
-                <span class="social-label">Email</span>
-              </a>
+            <nav aria-label="Social media navigation">
+              <div class="social-links">
+                <a
+                  href="mailto:hi@khuong.dev"
+                  class="social-link"
+                  rel="noopener noreferrer"
+                  aria-label="Send email to hi@khuong.dev"
+                >
+                  <span class="social-icon" role="img" aria-label="Email icon"
+                    >📧</span
+                  >
+                  <span class="social-label">Email</span>
+                </a>
 
-              <a
-                href="https://github.com/lamngockhuong"
-                class="social-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span class="social-icon">💻</span>
-                <span class="social-label">GitHub</span>
-              </a>
+                <a
+                  href="https://github.com/lamngockhuong"
+                  class="social-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit Khương's GitHub profile"
+                >
+                  <span class="social-icon" role="img" aria-label="GitHub icon"
+                    >💻</span
+                  >
+                  <span class="social-label">GitHub</span>
+                </a>
 
-              <a
-                href="https://khuong.dev"
-                class="social-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span class="social-icon">🌐</span>
-                <span class="social-label">Website</span>
-              </a>
+                <a
+                  href="https://khuong.dev"
+                  class="social-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit Khương's website"
+                >
+                  <span class="social-icon" role="img" aria-label="Website icon"
+                    >🌐</span
+                  >
+                  <span class="social-label">Website</span>
+                </a>
 
-              <a
-                href="https://dev.ngockhuong.com"
-                class="social-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span class="social-icon">✍️</span>
-                <span class="social-label">Blog</span>
-              </a>
+                <a
+                  href="https://dev.ngockhuong.com"
+                  class="social-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Read Khương's tech blog"
+                >
+                  <span class="social-icon" role="img" aria-label="Blog icon"
+                    >✍️</span
+                  >
+                  <span class="social-label">Blog</span>
+                </a>
 
-              <a
-                href="https://linkedin.com/in/lamngockhuong"
-                class="social-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span class="social-icon">💼</span>
-                <span class="social-label">LinkedIn</span>
-              </a>
+                <a
+                  href="https://linkedin.com/in/lamngockhuong"
+                  class="social-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Connect with Khương on LinkedIn"
+                >
+                  <span
+                    class="social-icon"
+                    role="img"
+                    aria-label="LinkedIn icon"
+                    >💼</span
+                  >
+                  <span class="social-label">LinkedIn</span>
+                </a>
 
-              <a
-                href="https://cv.ngockhuong.com"
-                class="social-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span class="social-icon">📄</span>
-                <span class="social-label">Resume</span>
-              </a>
-            </div>
-          </div>
+                <a
+                  href="https://cv.ngockhuong.com"
+                  class="social-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View Khương's resume"
+                >
+                  <span class="social-icon" role="img" aria-label="Resume icon"
+                    >📄</span
+                  >
+                  <span class="social-label">Resume</span>
+                </a>
+              </div>
+            </nav>
+          </section>
         </div>
-      </div>
+      </main>
     </div>
   </body>
 </html>
