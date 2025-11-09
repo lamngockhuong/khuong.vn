@@ -19,6 +19,10 @@
     <meta name="author" content="Lâm Ngọc Khương" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://khuong.dev" />
+    <meta
+      name="google-site-verification"
+      content="szDM-Vk1ERHS38FKTuXcOsCT2oflrs_O0DFNJDAEgDE"
+    />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -177,48 +181,76 @@
       /* Site Title Container */
       .site-title-container {
         padding-top: 15vh;
-        padding: 15vh 10px 0;
+        padding: 15vh 5px 0;
         position: relative;
         z-index: 2;
+      }
+
+      @media (min-width: 360px) {
+        .site-title-container {
+          padding: 15vh 10px 0;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .site-title-container {
+          padding: 15vh 20px 0;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .site-title-container {
+          padding: 20vh 20px 0;
+        }
       }
 
       .site-title {
         color: #ffffff;
         text-align: center;
         margin: 0 0 20px;
-        font-size: 48px;
+        font-size: clamp(36px, 12vw, 48px);
         font-weight: 700;
         word-break: keep-all;
         text-shadow: 0 0 40px rgba(255, 255, 255, 0.5),
           0 0 80px rgba(255, 255, 255, 0.3), 0 4px 20px rgba(0, 0, 0, 0.3);
-        letter-spacing: 0.05em;
+        letter-spacing: clamp(0.01em, 1vw, 0.05em);
       }
 
       @media (min-width: 360px) {
         .site-title {
-          font-size: 64px;
+          font-size: clamp(48px, 15vw, 64px);
+          letter-spacing: 0.03em;
         }
       }
 
       @media (min-width: 480px) {
         .site-title {
-          font-size: 96px;
+          font-size: clamp(64px, 18vw, 96px);
+          letter-spacing: 0.04em;
         }
       }
 
       @media (min-width: 768px) {
         .site-title {
-          font-size: 128px;
+          font-size: clamp(96px, 16vw, 128px);
+          letter-spacing: 0.045em;
         }
       }
 
       @media (min-width: 1024px) {
         .site-title {
-          font-size: 192px;
+          font-size: clamp(128px, 18vw, 192px);
           margin: 0 0 29px;
+          letter-spacing: 0.05em;
         }
         .site-title-container {
           padding-top: 20vh;
+        }
+      }
+
+      @media (min-width: 1440px) {
+        .site-title {
+          font-size: 192px;
         }
       }
 
