@@ -1,0 +1,56 @@
+/* Apps Listing Page Styles */
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 32px 0;
+}
+
+.app-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+.app-card:hover {
+  border-color: var(--accent);
+}
+
+.app-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.app-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.app-description {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.app-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.no-apps {
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 48px 0;
+}
+
+@media (max-width: 640px) {
+  .apps-grid {
+    grid-template-columns: 1fr;
+    padding: 24px 0;
+  }
+}

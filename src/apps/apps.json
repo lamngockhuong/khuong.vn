@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "id": "lucky-wheel",
+      "name": "Vòng quay may mắn",
+      "description": "Quay số ngẫu nhiên với các phần thưởng tùy chỉnh",
+      "icon": "🎡",
+      "path": "/apps/lucky-wheel/"
+    }
+  ]
+}

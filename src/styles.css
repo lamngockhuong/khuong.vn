@@ -1,0 +1,240 @@
+/* Base Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; overflow: hidden; }
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Hide all theme content by default */
+.terminal-content,
+.brutalist-content,
+.gradient-content,
+.glass-content,
+.neobrutalism-content { display: none; }
+
+/* ========== TERMINAL ========== */
+body.theme-terminal {
+  font-family: "JetBrains Mono", monospace;
+  background: #0d0d0d;
+  color: #00ff88;
+}
+.theme-terminal .terminal-content { display: block; }
+.theme-terminal .terminal-box {
+  border: 1px solid #00ff88;
+  padding: 30px 40px;
+  max-width: 420px;
+  width: 100%;
+}
+.theme-terminal .prompt { color: #666; }
+.theme-terminal .t-name {
+  font-size: clamp(28px, 8vw, 40px);
+  font-weight: 700;
+  display: inline;
+}
+.theme-terminal .cursor {
+  display: inline-block;
+  width: 12px;
+  height: 28px;
+  background: #00ff88;
+  margin-left: 4px;
+  animation: blink 1s infinite;
+  vertical-align: middle;
+}
+@keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
+.theme-terminal .t-role { color: #888; font-size: 14px; margin: 12px 0 28px; }
+.theme-terminal .t-links { display: flex; flex-direction: column; gap: 8px; }
+.theme-terminal .t-links a {
+  color: #00ff88;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+.theme-terminal .t-links a:hover { color: #fff; }
+.theme-terminal .t-links a::before { content: "→ "; color: #666; }
+
+/* ========== BRUTALIST ========== */
+body.theme-brutalist {
+  font-family: "Inter", sans-serif;
+  background: #000;
+  color: #fff;
+}
+.theme-brutalist .brutalist-content { display: block; text-align: center; }
+.theme-brutalist .b-name {
+  font-size: clamp(48px, 15vw, 120px);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.theme-brutalist .b-divider {
+  width: 100%;
+  max-width: 500px;
+  height: 4px;
+  background: #fff;
+  margin: 20px auto;
+}
+.theme-brutalist .b-role {
+  font-size: clamp(14px, 3vw, 18px);
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 40px;
+}
+.theme-brutalist .b-links { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
+.theme-brutalist .b-links a {
+  color: #666;
+  text-decoration: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: color 0.15s;
+}
+.theme-brutalist .b-links a:hover { color: #fff; }
+.theme-brutalist .sep { color: #333; }
+
+/* ========== GRADIENT ========== */
+body.theme-gradient {
+  font-family: "Inter", sans-serif;
+  background: #0a0a0f;
+  color: #e0e0e0;
+}
+.theme-gradient .gradient-content { display: block; text-align: center; }
+.theme-gradient .g-name {
+  font-size: clamp(48px, 12vw, 80px);
+  font-weight: 600;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+.theme-gradient .g-role { font-size: clamp(13px, 2.5vw, 16px); color: #666; margin: 12px 0 36px; letter-spacing: 0.05em; }
+.theme-gradient .g-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+.theme-gradient .g-links a {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none; transition: all 0.2s;
+}
+.theme-gradient .g-links a:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.2);
+  transform: translateY(-2px);
+}
+.theme-gradient .g-links a svg { width: 20px; height: 20px; fill: #888; transition: fill 0.2s; }
+.theme-gradient .g-links a:hover svg { fill: #fff; }
+
+/* ========== GLASS ========== */
+body.theme-glass {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+  color: #e0e0e0;
+}
+.theme-glass .glass-content { display: block; }
+.theme-glass .gl-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 40px 48px;
+  text-align: center;
+  max-width: 360px;
+  width: 100%;
+}
+.theme-glass .gl-avatar {
+  width: 80px; height: 80px; border-radius: 50%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 32px; font-weight: 600; color: #fff;
+}
+.theme-glass .gl-name { font-size: 28px; font-weight: 600; color: #fff; margin-bottom: 6px; }
+.theme-glass .gl-role { font-size: 14px; color: #888; margin-bottom: 28px; }
+.theme-glass .gl-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.theme-glass .gl-links a {
+  width: 40px; height: 40px; border-radius: 12px;
+  background: rgba(255,255,255,0.08);
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none; transition: all 0.2s;
+}
+.theme-glass .gl-links a:hover { background: rgba(255,255,255,0.15); transform: scale(1.1); }
+.theme-glass .gl-links a svg { width: 18px; height: 18px; fill: #aaa; transition: fill 0.2s; }
+.theme-glass .gl-links a:hover svg { fill: #fff; }
+
+/* ========== NEOBRUTALISM ========== */
+body.theme-neobrutalism {
+  font-family: "Space Grotesk", sans-serif;
+  background: #1a1a1a;
+  color: #fff;
+}
+.theme-neobrutalism .neobrutalism-content { display: block; }
+.theme-neobrutalism .nb-card {
+  background: #ffe156;
+  color: #1a1a1a;
+  border: 4px solid #1a1a1a;
+  box-shadow: 8px 8px 0 #1a1a1a;
+  padding: 36px 44px;
+  max-width: 380px;
+  width: 100%;
+}
+.theme-neobrutalism .nb-name {
+  font-size: clamp(36px, 10vw, 52px);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.theme-neobrutalism .nb-divider { height: 4px; background: #1a1a1a; margin: 16px 0; }
+.theme-neobrutalism .nb-role { font-size: 15px; font-weight: 500; margin-bottom: 28px; color: #333; }
+.theme-neobrutalism .nb-links { display: flex; gap: 10px; flex-wrap: wrap; }
+.theme-neobrutalism .nb-links a {
+  background: #1a1a1a;
+  color: #ffe156;
+  padding: 10px 16px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 3px solid #1a1a1a;
+  transition: all 0.15s;
+}
+.theme-neobrutalism .nb-links a:hover {
+  background: #ffe156;
+  color: #1a1a1a;
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 #1a1a1a;
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .theme-terminal .terminal-box { padding: 24px 20px; }
+  .theme-brutalist .b-links { gap: 16px; }
+  .theme-brutalist .sep { display: none; }
+  .theme-glass .gl-card { padding: 32px 24px; }
+  .theme-neobrutalism .nb-card { padding: 28px 24px; }
+  .theme-neobrutalism .nb-links a { padding: 8px 12px; font-size: 12px; }
+}
+
+/* Theme indicator */
+.theme-indicator {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  font-size: 11px;
+  opacity: 0.3;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.theme-indicator:hover { opacity: 0.7; }
+.theme-terminal .theme-indicator { color: #00ff88; font-family: "JetBrains Mono", monospace; }
+.theme-brutalist .theme-indicator { color: #666; font-family: "Inter", sans-serif; text-transform: uppercase; letter-spacing: 0.1em; }
+.theme-gradient .theme-indicator { color: #666; font-family: "Inter", sans-serif; }
+.theme-glass .theme-indicator { color: rgba(255,255,255,0.5); font-family: "Inter", sans-serif; }
+.theme-neobrutalism .theme-indicator { color: #666; font-family: "Space Grotesk", sans-serif; }

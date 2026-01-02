@@ -1,0 +1,142 @@
+/* Lucky Wheel App Styles */
+.wheel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 24px;
+  gap: 24px;
+}
+
+.wheel-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wheel-pointer {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 24px solid var(--accent);
+  z-index: 10;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+#wheel-canvas {
+  display: block;
+  border-radius: 50%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.spin-btn {
+  min-width: 160px;
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.spin-btn:active {
+  transform: scale(0.98);
+}
+
+.result {
+  text-align: center;
+  padding: 20px 32px;
+  background: var(--bg-card);
+  border: 2px solid var(--accent);
+  border-radius: var(--radius-md);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.result.hidden {
+  display: none;
+}
+
+.result.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.result-label {
+  display: block;
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.result-text {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.config-section {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+}
+
+.config-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--text-secondary);
+}
+
+.segments-input {
+  width: 100%;
+  min-height: 150px;
+  padding: 16px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.6;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  resize: vertical;
+  margin-bottom: 12px;
+}
+
+.segments-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.segments-input::placeholder {
+  color: var(--text-muted);
+}
+
+@media (max-width: 480px) {
+  .wheel-container {
+    padding: 24px 16px;
+  }
+
+  .spin-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .result {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .config-section {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vòng quay may mắn - Khương</title>
+  <meta name="description" content="Quay số ngẫu nhiên với các phần thưởng tùy chỉnh">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="page-header">
+    <a href="/apps/" class="back-link">Apps</a>
+    <h1 class="page-title">Vòng quay may mắn</h1>
+  </header>
+
+  <main class="wheel-container">
+    <div class="wheel-wrapper">
+      <div class="wheel-pointer"></div>
+      <canvas id="wheel-canvas"></canvas>
+    </div>
+
+    <button id="spin-btn" class="btn btn-primary spin-btn">
+      Quay!
+    </button>
+
+    <div id="result" class="result hidden">
+      <span class="result-label">Kết quả:</span>
+      <span id="result-text" class="result-text"></span>
+    </div>
+
+    <div class="config-section">
+      <h2 class="config-title">Tùy chỉnh</h2>
+      <textarea id="segments-input" class="segments-input" placeholder="Nhập các mục, mỗi dòng một mục..."></textarea>
+      <button id="update-btn" class="btn btn-secondary">Cập nhật vòng quay</button>
+    </div>
+  </main>
+
+  <script type="module" src="./main.ts"></script>
+</body>
+</html>

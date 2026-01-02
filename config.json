@@ -1,0 +1,29 @@
+{
+  "name": "Khương",
+  "role": "Thợ code",
+  "avatar": {
+    "type": "letter",
+    "value": "K"
+  },
+  "links": [
+    { "label": "Site", "url": "https://khuong.dev", "icon": "globe" },
+    { "label": "GitHub", "url": "https://github.com/lamngockhuong", "icon": "github" },
+    { "label": "LinkedIn", "url": "https://linkedin.com/in/lamngockhuong", "icon": "linkedin" },
+    { "label": "Email", "url": "mailto:hi@khuong.dev", "icon": "email" },
+    { "label": "Apps", "url": "/apps/", "icon": "apps" }
+  ],
+  "seo": {
+    "title": "Khương - Thợ code",
+    "description": "Thợ code",
+    "canonical": "https://khương.vn",
+    "ogImage": "https://khương.vn/profile.png"
+  },
+  "analytics": {
+    "goatcounter": "khuongvn"
+  },
+  "themes": {
+    "enabled": ["terminal", "brutalist", "gradient", "glass", "neobrutalism"],
+    "overrides": {}
+  },
+  "customCSS": ""
+}
