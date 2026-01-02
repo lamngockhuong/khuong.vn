@@ -107,17 +107,21 @@ Apps available at `khương.vn/apps/`:
    - [Cloudflare Dashboard](https://dash.cloudflare.com/profile/api-tokens) → Create Token
    - Use "Edit Cloudflare Workers" template (includes Pages)
 
-2. **Add GitHub Secret**:
-   - Repo → Settings → Secrets → Actions
-   - Add `CLOUDFLARE_API_TOKEN`
+2. **Get Account ID**:
+   - Cloudflare Dashboard → Any page → Right sidebar shows Account ID
 
-3. **First Deploy** (creates project):
+3. **Add GitHub Secrets**:
+   - Repo → Settings → Secrets → Actions
+   - Add `CLOUDFLARE_API_TOKEN` (from step 1)
+   - Add `CLOUDFLARE_ACCOUNT_ID` (from step 2)
+
+4. **First Deploy** (creates project):
 
    ```bash
    pnpm deploy
    ```
 
-4. **Configure Custom Domain**:
+5. **Configure Custom Domain**:
    - Cloudflare Dashboard → Workers & Pages → khuong-vn
    - Custom domains → Add: `khương.vn`
 
