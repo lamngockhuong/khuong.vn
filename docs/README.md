@@ -5,6 +5,7 @@ Welcome to the khương.vn documentation! This directory contains comprehensive 
 ## Documentation Files
 
 ### 1. [Project Overview & PDR](./project-overview-pdr.md)
+
 **Start here if you're new to the project**
 
 - Executive summary and project goals
@@ -14,6 +15,7 @@ Welcome to the khương.vn documentation! This directory contains comprehensive 
 - **Read time**: 10-15 minutes
 
 ### 2. [Codebase Summary](./codebase-summary.md)
+
 **Understanding the code structure**
 
 - Directory tree and file organization
@@ -24,6 +26,7 @@ Welcome to the khương.vn documentation! This directory contains comprehensive 
 - **Read time**: 15-20 minutes
 
 ### 3. [Code Standards](./code-standards.md)
+
 **Guidelines for consistent development**
 
 - TypeScript conventions (naming, imports, types)
@@ -34,6 +37,7 @@ Welcome to the khương.vn documentation! This directory contains comprehensive 
 - **Read time**: 20-30 minutes
 
 ### 4. [System Architecture](./system-architecture.md)
+
 **How everything works together**
 
 - High-level architecture diagrams
@@ -48,7 +52,7 @@ Welcome to the khương.vn documentation! This directory contains comprehensive 
 
 ## Quick Navigation
 
-### I want to...
+### I want to
 
 **Understand what this project does**
 → Read [Project Overview & PDR](./project-overview-pdr.md)
@@ -102,29 +106,34 @@ pnpm deploy
 ## Key Concepts
 
 ### Themes
+
 - **What**: 5 visual designs (Terminal, Brutalist, Gradient, Glass, Neobrutalism)
 - **How**: HTML factories in `src/themes.ts` + CSS classes in `src/styles.css`
 - **Random**: Different theme selected on each page load
 - **Persistent**: localStorage remembers last theme to avoid repeat
 
 ### Short Links
+
 - **What**: URLs like `khương.vn/github` that redirect to destination
 - **How**: Cloudflare Pages Functions intercept requests, check `functions/redirects.ts`
 - **Status Code**: 301 (Permanent Redirect)
 - **Customization**: Edit `functions/redirects.ts` to add/remove
 
 ### Mini Apps
+
 - **Framework**: Vite multi-page build (separate entry points)
 - **Currently**: Lucky Wheel spinner with canvas animation
 - **Extensible**: Add new apps by creating `src/apps/{app-name}/` directory
 - **Registry**: List apps in `src/apps/apps.json`
 
 ### Configuration
+
 - **File**: `config.json` (consumed at build time)
 - **Content**: Site name, role, links, SEO, analytics, theme list
 - **Zero Code Changes**: Customize site purely through JSON
 
 ### Lucky Wheel
+
 - **Type**: Canvas-based pie wheel
 - **Animation**: 4-second spin with ease-out-cubic easing
 - **Segments**: 6 default Vietnamese labels, customizable
@@ -133,7 +142,8 @@ pnpm deploy
 ## File Organization Patterns
 
 ### Adding Features
-```
+
+```bash
 New Feature
   ├─ TypeScript: src/{location}.ts
   ├─ Styling: src/styles.css (or src/apps/{name}/styles.css)
@@ -143,7 +153,8 @@ New Feature
 ```
 
 ### Configuration Priority
-```
+
+```bash
 Default (hardcoded) → config.json (build-time) → localStorage (runtime)
 ```
 
@@ -185,22 +196,26 @@ Infrastructure Layer
 ## Common Tasks
 
 ### Update Site Name
+
 1. Edit `config.json` → `name` field
 2. Run `pnpm build`
 3. All 5 themes automatically update
 
 ### Add a New Theme
+
 1. Create renderer function in `src/themes.ts`
 2. Add CSS classes in `src/styles.css`
 3. Add theme name to `config.json` → `themes.enabled`
 4. Test all theme switching
 
 ### Fix a Redirect
+
 1. Find wrong entry in `functions/redirects.ts`
 2. Update URL
 3. Run `pnpm deploy` (rebuild + deploy)
 
 ### Deploy Changes
+
 1. Commit to git: `git commit -m "description"`
 2. Push to main: `git push`
 3. CI/CD automatically deploys via `pnpm deploy`
@@ -237,6 +252,7 @@ Infrastructure Layer
 ## Support & Questions
 
 For issues or questions:
+
 - Check the relevant documentation file above
 - Review [Codebase Summary](./codebase-summary.md) for file locations
 - See [System Architecture](./system-architecture.md) for how components interact

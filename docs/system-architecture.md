@@ -2,7 +2,7 @@
 
 ## High-Level Architecture Diagram
 
-```
+```bash
 ┌─────────────────────────────────────────────────────────────────┐
 │                      USER BROWSER                               │
 └─────────────────────────────────────────────────────────────────┘
@@ -10,12 +10,12 @@
                               ▼
 ┌─────────────────────────────────────────────────────────────────┐
 │                  CLOUDFLARE PAGES EDGE                          │
-│  ┌──────────────────────────────────────────────────────────┐  │
-│  │  Request Handler (_middleware.ts)                        │  │
-│  │  Check: Is path in redirects.ts?                         │  │
-│  │  ├─ YES → Return 301 redirect                            │  │
-│  │  └─ NO → Serve static file from dist/                   │  │
-│  └──────────────────────────────────────────────────────────┘  │
+│  ┌──────────────────────────────────────────────────────────┐   │
+│  │  Request Handler (_middleware.ts)                        │   │
+│  │  Check: Is path in redirects.ts?                         │   │
+│  │  ├─ YES → Return 301 redirect                            │   │
+│  │  └─ NO → Serve static file from dist/                    │   │
+│  └──────────────────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────────────────┘
                               │
                      ┌────────┴────────┐
@@ -33,63 +33,63 @@
 
 ## Build Architecture
 
-```
+```bash
 ┌─────────────────────────────────────────────────────────────────┐
 │                    DEVELOPMENT                                  │
-│  src/                                                            │
-│  ├── index.html ─┐                                               │
+│  src/                                                           │
+│  ├── index.html ─┐                                              │
 │  ├── main.ts ────┼──────► TypeScript Compiler (tsc)             │
-│  ├── themes.ts ──┤       (Type checking)                         │
-│  ├── config.ts ──┤                                               │
-│  ├── icons.ts ───┤                                               │
-│  ├── config.json─┤                                               │
-│  └── styles.css ─┤                                               │
-│                  │                                               │
+│  ├── themes.ts ──┤       (Type checking)                        │
+│  ├── config.ts ──┤                                              │
+│  ├── icons.ts ───┤                                              │
+│  ├── config.json─┤                                              │
+│  └── styles.css ─┤                                              │
+│                  │                                              │
 │  src/apps/       ├──────► Vite Bundler & Build                  │
 │  ├── index.html ─┤       - Multi-page config                    │
 │  ├── main.ts ────┤       - HTML transform plugin                │
 │  ├── apps.json ──┤       - CSS minimization                     │
 │  └── styles.css ─┤       - Asset hashing                        │
-│                  │                                               │
-│  src/apps/lucky-wheel/───┐                                       │
-│  ├── index.html  ────────┤                                       │
-│  ├── main.ts     ────────┤                                       │
-│  ├── wheel.ts    ────────┤                                       │
-│  └── styles.css  ────────┘                                       │
-│                                                                   │
-│  functions/                                                       │
-│  ├── _middleware.ts ─┐                                            │
+│                  │                                              │
+│  src/apps/lucky-wheel/───┐                                      │
+│  ├── index.html  ────────┤                                      │
+│  ├── main.ts     ────────┤                                      │
+│  ├── wheel.ts    ────────┤                                      │
+│  └── styles.css  ────────┘                                      │
+│                                                                 │
+│  functions/                                                     │
+│  ├── _middleware.ts ─┐                                          │
 │  └── redirects.ts ───┼──► TypeScript → JavaScript (Wrangler)    │
-│                      │    (Workers runtime transpilation)        │
-│  config.json ────────┘                                            │
+│                      │    (Workers runtime transpilation)       │
+│  config.json ────────┘                                          │
 └─────────────────────────────────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                    BUILD OUTPUT (dist/)                          │
-│  ├── index.html                 (Identity page)                  │
-│  ├── apps/index.html            (Apps listing)                   │
-│  ├── apps/lucky-wheel/index.html (Wheel app)                     │
-│  └── assets/                                                     │
-│      ├── main-{hash}.js         (Identity logic)                 │
-│      ├── apps-{hash}.js         (Apps listing logic)             │
-│      ├── luckyWheel-{hash}.js    (Wheel logic)                    │
-│      ├── main-{hash}.css        (Identity styles)                │
-│      ├── apps-{hash}.css        (Apps listing styles)            │
-│      ├── luckyWheel-{hash}.css   (Wheel styles)                   │
-│      ├── theme-{hash}.css       (Shared theme vars)              │
-│      └── modulepreload-polyfill.js                               │
-│                                                                   │
-│  functions/                                                      │
-│  ├── _middleware.ts             (Compiled JS)                    │
-│  └── redirects.ts               (Compiled JS)                    │
+│                    BUILD OUTPUT (dist/)                         │
+│  ├── index.html                 (Identity page)                 │
+│  ├── apps/index.html            (Apps listing)                  │
+│  ├── apps/lucky-wheel/index.html (Wheel app)                    │
+│  └── assets/                                                    │
+│      ├── main-{hash}.js         (Identity logic)                │
+│      ├── apps-{hash}.js         (Apps listing logic)            │
+│      ├── luckyWheel-{hash}.js    (Wheel logic)                  │
+│      ├── main-{hash}.css        (Identity styles)               │
+│      ├── apps-{hash}.css        (Apps listing styles)           │
+│      ├── luckyWheel-{hash}.css   (Wheel styles)                 │
+│      ├── theme-{hash}.css       (Shared theme vars)             │
+│      └── modulepreload-polyfill.js                              │
+│                                                                 │
+│  functions/                                                     │
+│  ├── _middleware.ts             (Compiled JS)                   │
+│  └── redirects.ts               (Compiled JS)                   │
 └─────────────────────────────────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│              CLOUDFLARE PAGES DEPLOYMENT                         │
+│              CLOUDFLARE PAGES DEPLOYMENT                        │
 │  wrangler pages deploy dist/                                    │
-│  ↓                                                               │
+│  ↓                                                              │
 │  Cloudflare builds & deploys static assets to edge              │
 └─────────────────────────────────────────────────────────────────┘
 ```
@@ -98,7 +98,7 @@
 
 ### Identity Page (index.html)
 
-```
+```bash
 Page Load
    ↓
 HTML: <script src="main-{hash}.js">
@@ -123,7 +123,7 @@ User clicks .theme-indicator
 
 ### Apps Listing Page (apps/index.html)
 
-```
+```bash
 Page Load
    ↓
 HTML: <script src="apps-{hash}.js">
@@ -146,7 +146,7 @@ User clicks app card
 
 ### Lucky Wheel App (apps/lucky-wheel/index.html)
 
-```
+```bash
 Page Load
    ↓
 HTML: <canvas id="wheel-canvas">
@@ -188,7 +188,7 @@ User can customize segments
 
 ### Theme Selection & Persistence
 
-```
+```bash
 config.json (build-time)
    ├─ themes.enabled = ["terminal", "brutalist", "gradient", "glass", "neobrutalism"]
    ↓
@@ -207,7 +207,7 @@ main.ts (runtime)
 
 ### Short Link Redirect Flow
 
-```
+```bash
 User Request: https://khương.vn/github
    ↓
 Cloudflare Pages
@@ -224,7 +224,7 @@ User Browser
 
 ### SEO Metadata Injection
 
-```
+```bash
 config.json
    ├─ seo.title
    ├─ seo.description
@@ -250,7 +250,7 @@ dist/index.html (final)
 
 ## Component Interactions
 
-```
+```bash
 ┌─────────────────────┐
 │   config.json       │
 └─────────────────────┘
@@ -266,7 +266,7 @@ dist/index.html (final)
 ┌─────────────────────┐         ┌──────────────────┐
 │  main.ts            │────────→│  styles.css      │
 └─────────────────────┘         │ (theme-specific) │
-         │                       └──────────────────┘
+         │                      └──────────────────┘
          │                            │
          │                            │
          ↓                            ↓
@@ -320,7 +320,7 @@ dist/index.html (final)
 
 ## Deployment Pipeline
 
-```
+```bash
 Developer
    │
    ├─ Commit to main branch
@@ -364,16 +364,19 @@ https://khương.vn
 | Theme CSS | ~8KB | Yes | 365 days |
 
 ### Redirect Performance
+
 - **Time to Redirect**: < 1ms (memory lookup)
 - **Network**: Cloudflare edge (varies by location)
 - **Cache**: N/A (always 301, not cached)
 
 ### Theme Switching
+
 - **Operation**: DOM class toggle + localStorage write
 - **Time**: < 5ms (synchronous)
 - **Visual**: Instant (CSS cascade applies immediately)
 
 ### Lucky Wheel Animation
+
 - **Frame Rate**: 60 FPS (requestAnimationFrame)
 - **Duration**: 4 seconds
 - **GPU**: Yes (transform via rotation)
@@ -382,22 +385,26 @@ https://khương.vn
 ## Security Considerations
 
 ### Input Handling
+
 - **config.json**: Consumed at build time (trusted source)
 - **localStorage**: User-controlled, no security risk (theme preference)
 - **User Input**: Lucky Wheel segments are local-only, no network exposure
 
 ### URL Redirects
+
 - **Validation**: Explicit whitelist in `redirects.ts`
 - **Protocol**: All redirects are https:// or mailto:
 - **No**: User input in redirect target
 
 ### Content Security
+
 - **No**: External scripts (except GoatCounter if configured)
 - **No**: eval() or dynamic code execution
 - **Inline**: SVG icons hardcoded (safe)
 - **HTML**: All generated via string templates (no XSS vectors)
 
 ### Cloudflare Security
+
 - **DDoS Protection**: Via Cloudflare infrastructure
 - **HTTPS**: Automatic via Cloudflare Pages
 - **Custom Domain**: khương.vn with TLS certificate
@@ -405,16 +412,19 @@ https://khương.vn
 ## Scalability
 
 ### Horizontal
+
 - **Static Hosting**: No database/compute constraints
 - **Edge Caching**: Cloudflare distributes to 200+ edge locations
 - **Unlimited Concurrent**: Static files auto-scale
 
 ### Vertical
+
 - **Bundle Size**: Currently ~50KB, can add more themes/apps
 - **Page Count**: Multi-page build supports unlimited pages
 - **Redirect Limit**: Redirect object can support 1000+ entries
 
 ### Data Limits
+
 - **localStorage**: ~10MB per domain (browser-dependent)
 - **config.json**: ~100KB practical limit (before build slowdown)
 - **apps.json**: ~1000 apps before performance concern
@@ -422,37 +432,44 @@ https://khương.vn
 ## Monitoring & Observability
 
 ### Analytics
+
 - **Provider**: GoatCounter (if configured)
 - **Data**: Page views, referrers, session duration
 - **Privacy**: No tracking cookies, no user identification
 
 ### Errors
+
 - **Browser Console**: Errors logged for development
 - **Canvas Context**: Error thrown if 2D context unavailable
 - **localStorage**: Gracefully degraded if unavailable
 
 ### No**: Structured logging (static site limitation)
+
 - **No**: Error aggregation service (would require backend)
 - **No**: Performance monitoring (built-in browser performance API available)
 
 ## Future Architecture Considerations
 
 ### Database Integration
+
 - **When**: If admin dashboard needed for redirect management
 - **Option**: Cloudflare D1 (SQLite edge)
 - **Impact**: Would require backend API endpoints
 
 ### Asset Serving
+
 - **Current**: Static from Cloudflare
 - **Future**: R2 (Cloudflare object storage) for large assets
 - **Impact**: CDN-independent blob storage
 
 ### Image Optimization
+
 - **Current**: Manual (public/ folder)
 - **Future**: Cloudflare Image Resizing API
 - **Impact**: Automatic format conversion & caching
 
 ### Database Redirects
+
 - **Current**: Static file redirects.ts
 - **Future**: Dynamic redirect management UI
 - **Impact**: Real-time redirect updates without rebuild

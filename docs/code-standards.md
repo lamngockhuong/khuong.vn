@@ -7,12 +7,14 @@ This document defines coding conventions, patterns, and best practices for the k
 ## TypeScript Conventions
 
 ### File Naming
+
 - **Modules**: camelCase (e.g., `main.ts`, `themes.ts`, `wheel.ts`)
 - **Classes**: PascalCase (e.g., `LuckyWheel`)
 - **Interfaces**: PascalCase (e.g., `Link`, `Config`, `Segment`)
 - **Enums**: PascalCase with SCREAMING_SNAKE_CASE values
 
 ### Exports
+
 ```typescript
 // Default exports for single primary export per file
 export default function renderTheme() { }
@@ -27,7 +29,9 @@ export type ThemeOptions = { }
 ```
 
 ### Import Organization
+
 Order imports in this sequence:
+
 1. External libraries (if any)
 2. Local modules (relative imports)
 3. Style imports (CSS files last)
@@ -39,6 +43,7 @@ import './styles.css'                    // Styles last
 ```
 
 ### Type Annotations
+
 - Always annotate function parameters and return types
 - Use explicit types instead of `any`
 - Use union types for options: `type Theme = 'terminal' | 'brutalist' | 'gradient'`
@@ -56,6 +61,7 @@ function setTheme(theme) {
 ```
 
 ### DOM Querying
+
 - Use `querySelector` for single elements
 - Use `querySelectorAll` for multiple elements
 - Always null-check results
@@ -70,6 +76,7 @@ document.querySelector('.container').innerHTML = '...' // May crash if not found
 ```
 
 ### Event Listeners
+
 - Attach listeners in initialization functions
 - Use arrow functions to preserve `this` context
 - Remove listeners if component unmounts (not applicable here - single-page)
@@ -82,6 +89,7 @@ button?.addEventListener('click', () => {
 ```
 
 ### Error Handling
+
 - Use try-catch for Canvas API operations
 - Throw descriptive errors for development
 
@@ -91,6 +99,7 @@ if (!ctx) throw new Error('Canvas 2D context not supported')
 ```
 
 ### localStorage Usage
+
 - Use consistent key naming with scope prefix
 - Parse/stringify carefully
 
@@ -104,6 +113,7 @@ const segments = JSON.parse(localStorage.getItem('wheel:segments') || '[]')
 ```
 
 ### Comments
+
 - Comment "why" not "what" - code should be self-documenting
 - Use JSDoc for public functions
 
@@ -127,10 +137,12 @@ const x = 5 // set x to 5
 ## CSS/Styling Conventions
 
 ### File Organization
+
 - **`styles.css`**: Page-specific styles (layouts, components, animations)
 - **`shared/theme.css`**: Shared variables, utilities, and theme base
 
 ### CSS Variables
+
 - Define in `shared/theme.css` for reuse
 - Use descriptive names with semantic prefixes
 - Follow kebab-case convention
@@ -158,6 +170,7 @@ const x = 5 // set x to 5
 ```
 
 ### Class Naming (BEM-inspired)
+
 - Use descriptive kebab-case class names
 - For theme-specific styles: `.theme-{name}-{component}`
 - Block: `.terminal-box`, Modifier: `.terminal-box.active`
@@ -184,6 +197,7 @@ body.theme-gradient .gradient-content {
 ```
 
 ### Theme Visibility
+
 - Each theme uses a display pattern toggled by body class
 - All themes exist in DOM but hidden via `display: none`
 
@@ -206,6 +220,7 @@ body.theme-neobrutalism .neobrutalism-content { display: block; }
 ```
 
 ### Responsive Design
+
 - Mobile-first approach
 - Use CSS media queries for breakpoints
 
@@ -233,6 +248,7 @@ body.theme-neobrutalism .neobrutalism-content { display: block; }
 ```
 
 ### Animations
+
 - Use CSS transitions for simple state changes
 - Use `@keyframes` for complex animations
 - Prefer transform and opacity for performance
@@ -255,6 +271,7 @@ body.theme-neobrutalism .neobrutalism-content { display: block; }
 ```
 
 ### Units
+
 - Use `rem` for font sizes and spacing (scales with root font-size)
 - Use `px` for borders and precise measurements
 - Use `%` or viewport units for layouts
@@ -277,6 +294,7 @@ body.theme-neobrutalism .neobrutalism-content { display: block; }
 ## Configuration Standards
 
 ### config.json Structure
+
 - Keys use camelCase
 - URLs are absolute (https://) or relative (/path)
 - Arrays and objects follow JSON conventions
@@ -284,7 +302,7 @@ body.theme-neobrutalism .neobrutalism-content { display: block; }
 ```json
 {
   "name": "Khương",
-  "role": "Thợ code",
+  "role": "Anh thợ code",
   "avatar": {
     "type": "letter",
     "value": "K"
@@ -297,8 +315,8 @@ body.theme-neobrutalism .neobrutalism-content { display: block; }
     { "label": "Apps", "url": "/apps/", "icon": "apps" }
   ],
   "seo": {
-    "title": "Khương - Thợ code",
-    "description": "Thợ code",
+    "title": "Khương - Anh thợ code",
+    "description": "Anh thợ code",
     "canonical": "https://khương.vn",
     "ogImage": "https://khương.vn/profile.png"
   },
@@ -314,6 +332,7 @@ body.theme-neobrutalism .neobrutalism-content { display: block; }
 ```
 
 ### Redirect Mapping Format
+
 ```typescript
 export const redirects: Record<string, string> = {
   github: 'https://github.com/lamngockhuong',
@@ -325,6 +344,7 @@ export const redirects: Record<string, string> = {
 ## HTML Standards
 
 ### Template Conventions
+
 - Use semantic HTML5 elements
 - Include proper ARIA labels for accessibility
 - Use data attributes for JS hooks
@@ -344,7 +364,9 @@ export const redirects: Record<string, string> = {
 ```
 
 ### SEO Placeholders
+
 Build process replaces these in `index.html`:
+
 - `%VITE_TITLE%` → config.seo.title
 - `%VITE_DESCRIPTION%` → config.seo.description
 - `%VITE_NAME%` → config.name
@@ -355,6 +377,7 @@ Build process replaces these in `index.html`:
 ## Component Patterns
 
 ### Theme Renderer Pattern
+
 ```typescript
 export const themes: Record<string, () => string> = {
   terminal: () => `
@@ -366,6 +389,7 @@ export const themes: Record<string, () => string> = {
 ```
 
 ### Canvas Component Pattern
+
 ```typescript
 export class CanvasComponent {
   private canvas: HTMLCanvasElement
@@ -395,16 +419,19 @@ export class CanvasComponent {
 ## Performance Best Practices
 
 ### Bundle Size
+
 - Keep main.ts focused on initialization
 - Use string templates instead of DOM builders
 - Lazy load heavy assets (not applicable to current mini-apps)
 
 ### Rendering Performance
+
 - Use `display: none` instead of removing from DOM
 - Batch DOM updates
 - Use `requestAnimationFrame` for animations
 
 ### Deployment
+
 - Always minify CSS and JavaScript
 - Use content hashing in asset names (Vite default)
 - Compress images in public/ folder
@@ -412,12 +439,14 @@ export class CanvasComponent {
 ## Accessibility Standards
 
 ### WCAG AA Compliance
+
 - Ensure text contrast ≥ 4.5:1 for normal text
 - Provide alt text for images
 - Use semantic HTML
 - Support keyboard navigation
 
 ### Keyboard Navigation
+
 ```typescript
 // Good - supporting Enter/Space for buttons
 element.addEventListener('keydown', (e) => {
@@ -428,6 +457,7 @@ element.addEventListener('keydown', (e) => {
 ```
 
 ### Screen Readers
+
 - Use `aria-label` for icon-only links
 - Use `role` attributes appropriately
 - Provide text alternatives for visual content

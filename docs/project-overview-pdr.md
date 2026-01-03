@@ -21,6 +21,7 @@
 ## Key Features
 
 ### 1. Dynamic Theme System (5 Themes)
+
 - **Terminal**: Retro CLI aesthetic with cursor animation
 - **Brutalist**: Minimalist design with dividers and separators
 - **Gradient**: Modern gradient background with icon links
@@ -30,22 +31,26 @@
 **Behavior**: Random theme on each visit, excludes recently-shown theme, persists via localStorage
 
 ### 2. Short Link Redirects
+
 - **Service**: HTTP 301 permanent redirects via Cloudflare Pages Functions
 - **Coverage**: 17 shortcuts (github, linkedin, twitter, blog, cv, etc.)
 - **Customizable**: Easy to add/remove via `functions/redirects.ts`
 - **Apps Link**: Primary nav includes link to `/apps/` (icon: apps, via config.json)
 
 ### 3. Mini Apps Framework
+
 - **Current**: Lucky Wheel - interactive canvas-based pie wheel spinner
 - **Extensible**: Multi-page Vite build supports unlimited apps
 - **Architecture**: Each app is self-contained (HTML, TS, CSS)
 
 ### 4. Configuration-Driven Design
+
 - **Main Config**: `config.json` - site metadata, SEO, theme settings, analytics
 - **Apps Registry**: `src/apps/apps.json` - app catalog for listing page
 - **No Code Changes Needed**: Update content purely through JSON
 
 ### 5. Analytics Integration
+
 - **Provider**: GoatCounter (privacy-focused alternative to Google Analytics)
 - **Configurable**: Via `config.json` analytics field
 - **Script Injection**: Auto-included at build time via Vite plugin
@@ -91,12 +96,14 @@
 ## Success Metrics
 
 ### Quantitative
+
 - **Page Load Time**: < 100ms (Cloudflare edge)
 - **Redirect Success Rate**: 100% for configured short links
 - **Theme Rendering**: All 5 themes display correctly on target devices
 - **Accessibility**: WCAG AA compliance for identity + apps pages
 
 ### Qualitative
+
 - Clean, maintainable TypeScript codebase
 - Easy JSON configuration for site customization
 - Extensible architecture for new apps
@@ -136,13 +143,13 @@
 ## Deployment
 
 - **Hosting**: Cloudflare Pages
-- **Domain**: https://khương.vn (with internationalized domain)
+- **Domain**: <https://khương.vn> (with internationalized domain)
 - **CI/CD**: GitHub Actions → Cloudflare Pages
 - **Custom Domain**: Configured in Cloudflare dashboard
 
 ## Documentation Structure
 
-```
+```bash
 docs/
 ├── project-overview-pdr.md     # This file - overview & requirements
 ├── codebase-summary.md          # File structure & module purposes

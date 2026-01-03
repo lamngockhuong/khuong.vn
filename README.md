@@ -43,7 +43,7 @@ pnpm deploy        # Build + deploy to Cloudflare Pages
 ```json
 {
   "name": "Khương",
-  "role": "Thợ code",
+  "role": "Anh thợ code",
   "avatar": { "type": "letter", "value": "K" },
   "links": [
     { "label": "Site", "url": "https://khuong.dev", "icon": "globe" },
@@ -53,8 +53,8 @@ pnpm deploy        # Build + deploy to Cloudflare Pages
     { "label": "Apps", "url": "/apps/", "icon": "apps" }
   ],
   "seo": {
-    "title": "Khương - Thợ code",
-    "description": "Thợ code",
+    "title": "Khương - Anh thợ code",
+    "description": "Anh thợ code",
     "canonical": "https://khương.vn",
     "ogImage": "https://khương.vn/profile.png"
   },
@@ -127,7 +127,7 @@ Apps available at `khương.vn/apps/`:
 
 ### How It Works
 
-```
+```bash
 Request to khương.vn/github
          ↓
 Cloudflare Pages
@@ -140,7 +140,7 @@ No match? → Serve static from dist/
 
 ## Project Structure
 
-```
+```bash
 ├── src/
 │   ├── index.html          # Identity page template
 │   ├── main.ts             # Identity entry, theme logic

@@ -2,7 +2,7 @@
 
 ## Directory Structure
 
-```
+```bash
 khuong.vn/
 ├── src/                           # Source files (entry point: Vite root)
 │   ├── index.html                 # Identity landing page template
@@ -44,11 +44,13 @@ khuong.vn/
 ### Root Identity Layer
 
 #### `src/index.html`
+
 - **Purpose**: Main landing page template
 - **Placeholders**: `%VITE_TITLE%`, `%VITE_DESCRIPTION%`, `%VITE_NAME%`, `%VITE_CANONICAL%`, `%VITE_OG_IMAGE%`, `%VITE_ANALYTICS%`
 - **Script Entry**: Loads compiled `main.ts`
 
 #### `src/main.ts`
+
 - **Purpose**: Identity page logic and theme management
 - **Key Functions**:
   - `renderThemes()`: Appends HTML for enabled themes to container
@@ -63,6 +65,7 @@ khuong.vn/
   5. Inject custom CSS if configured
 
 #### `src/config.ts`
+
 - **Purpose**: TypeScript types and config import
 - **Exports**:
   - Interface: `Link` - social link definition
@@ -75,6 +78,7 @@ khuong.vn/
   - Const: `config` - imported from `config.json` at build time
 
 #### `src/themes.ts`
+
 - **Purpose**: Theme HTML generators
 - **Exports**:
   - `themeNames`: Map of theme ID → display name
@@ -88,12 +92,14 @@ khuong.vn/
 - **Pattern**: All use `renderTextLink()` or `renderIconLink()` helpers
 
 #### `src/icons.ts`
+
 - **Purpose**: SVG icon library
 - **Icons**: globe, github, linkedin, email, apps (grid layout icon)
 - **Format**: Inline SVG strings (viewBox="0 0 24 24")
 - **Usage**: Referenced by theme renderers and icon links in config
 
 #### `src/styles.css`
+
 - **Purpose**: Identity page global styles and theme-specific styling
 - **Sections**:
   - Root CSS variables (colors, fonts, spacing)
@@ -107,25 +113,30 @@ khuong.vn/
   - `.theme-indicator`: Clickable theme switcher
 
 #### `src/shared/theme.css`
+
 - **Purpose**: Shared CSS variables and utilities
 - **Contains**: Color palettes, typography, breakpoints for reuse across pages
 
 ### Apps Framework Layer
 
 #### `src/apps/index.html`
+
 - **Purpose**: Apps listing page template
 - **Structure**: Apps grid container
 - **Script Entry**: Loads compiled `apps/main.ts`
 
 #### `src/apps/main.ts`
+
 - **Purpose**: Apps listing page initialization
 - **Key Function**: `renderApps()` - reads `apps.json`, renders cards in grid
 - **Card Structure**: id, name, description, icon, path link
 - **Lifecycle**: Load apps.json, loop entries, generate card HTML
 
 #### `src/apps/apps.json`
+
 - **Purpose**: App registry configuration
 - **Schema**:
+
   ```json
   {
     "apps": [
@@ -139,20 +150,24 @@ khuong.vn/
     ]
   }
   ```
+
 - **Extensibility**: Add new objects to enable new apps
 
 #### `src/apps/styles.css`
+
 - **Purpose**: Apps listing page styles
 - **Components**: Grid layout, card styles, hover effects
 
 ### Lucky Wheel Mini-App Layer
 
 #### `src/apps/lucky-wheel/index.html`
+
 - **Purpose**: Wheel app page template
 - **Elements**: Canvas element, spin button, result display
 - **Script Entry**: Loads compiled `lucky-wheel/main.ts`
 
 #### `src/apps/lucky-wheel/main.ts`
+
 - **Purpose**: Event handlers and initialization
 - **Key Features**:
   - Initialize LuckyWheel class with canvas
@@ -163,6 +178,7 @@ khuong.vn/
 - **Storage**: Persist custom segments to localStorage
 
 #### `src/apps/lucky-wheel/wheel.ts`
+
 - **Purpose**: LuckyWheel class - Canvas-based pie wheel
 - **Class**: `LuckyWheel`
   - **Constructor**: Initialize canvas, setup, set default segments
@@ -182,12 +198,14 @@ khuong.vn/
 - **Accessibility**: Segment labels configurable, contrast-aware text
 
 #### `src/apps/lucky-wheel/styles.css`
+
 - **Purpose**: Wheel app specific styles
 - **Components**: Canvas container, button styles, result display
 
 ### Configuration & Build Files
 
 #### `config.json`
+
 - **Purpose**: Site metadata consumed at build time
 - **Sections**:
   - `name`: Display name (Khương)
@@ -200,6 +218,7 @@ khuong.vn/
   - `customCSS`: Optional inline CSS
 
 #### `vite.config.ts`
+
 - **Purpose**: Vite build configuration
 - **Features**:
   - Multi-page build (main, apps, luckyWheel entries)
@@ -212,6 +231,7 @@ khuong.vn/
 - **Plugins**: Custom `html-transform` for config injection into main page
 
 #### `wrangler.toml`
+
 - **Purpose**: Cloudflare Pages configuration
 - **Settings**:
   - Project name: khuong-vn
@@ -219,10 +239,12 @@ khuong.vn/
   - Pages build output directory: dist
 
 #### `tsconfig.json`
+
 - **Purpose**: TypeScript compiler options
 - **Target**: ES2020, module resolution, strict mode
 
 #### `package.json`
+
 - **Purpose**: Node.js project metadata
 - **Key Scripts**:
   - `dev`: Vite dev server (hot reload)
@@ -234,6 +256,7 @@ khuong.vn/
 ### Functions / Serverless
 
 #### `functions/_middleware.ts`
+
 - **Purpose**: Request routing middleware for Cloudflare Pages
 - **Handler**: `onRequest` function
 - **Logic**:
@@ -244,6 +267,7 @@ khuong.vn/
 - **Export**: `PagesFunction` type from Cloudflare Workers
 
 #### `functions/redirects.ts`
+
 - **Purpose**: Short link mapping repository
 - **Format**: `Record<string, string>` object
 - **Entries**: 17 redirects (github, github → gh, linkedin → li, twitter → x, email, mail, blog, dev, cv, resume, facebook → fb)
@@ -253,6 +277,7 @@ khuong.vn/
 ## Key Dependencies
 
 ### Development
+
 - `typescript`: TypeScript compiler (5.9.3) - pinned version
 - `vite`: Build tool and dev server (7.3.0) - pinned version
 - `wrangler`: Cloudflare CLI for Pages/Workers (4.54.0) - pinned version
@@ -262,7 +287,7 @@ khuong.vn/
 
 ## Module Relationships
 
-```
+```bash
 index.html
   ↓
 main.ts ← config.ts, themes.ts, icons.ts, styles.css
@@ -298,7 +323,7 @@ index.html (SEO placeholders replaced)
 
 ## Build Output Structure
 
-```
+```bash
 dist/
 ├── index.html                     # Identity page
 ├── apps/index.html               # Apps listing

@@ -1,6 +1,6 @@
 {
   "name": "Khương",
-  "role": "Thợ code",
+  "role": "Anh thợ code",
   "avatar": {
     "type": "letter",
     "value": "K"
@@ -13,8 +13,8 @@
     { "label": "Apps", "url": "/apps/", "icon": "apps" }
   ],
   "seo": {
-    "title": "Khương - Thợ code",
-    "description": "Thợ code",
+    "title": "Khương - Anh thợ code",
+    "description": "Anh thợ code",
     "canonical": "https://khương.vn",
     "ogImage": "https://khương.vn/profile.png"
   },
