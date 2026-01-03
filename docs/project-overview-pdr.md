@@ -147,6 +147,7 @@
 - **Domain**: <https://khương.vn> (with internationalized domain)
 - **CI/CD**: GitHub Actions → Cloudflare Pages
 - **Custom Domain**: Configured in Cloudflare dashboard
+- **Wildcard DNS**: `*` CNAME record for subdomain redirects (e.g., `github.khương.vn`)
 
 ## Documentation Structure
 

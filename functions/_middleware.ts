@@ -1,7 +1,7 @@
 import { redirects } from "./redirects";
 
 // Base domains (IDN and punycode versions)
-const BASE_DOMAINS = ["khương.vn", "xn--khng-5qa.vn"];
+const BASE_DOMAINS = ["khương.vn", "xn--khng-mgb3g.vn"];
 
 /**
  * Extract subdomain from hostname

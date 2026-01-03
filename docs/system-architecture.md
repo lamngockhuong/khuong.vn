@@ -12,9 +12,10 @@
 │                  CLOUDFLARE PAGES EDGE                          │
 │  ┌──────────────────────────────────────────────────────────┐   │
 │  │  Request Handler (_middleware.ts)                        │   │
-│  │  Check: Is path in redirects.ts?                         │   │
-│  │  ├─ YES → Return 301 redirect                            │   │
-│  │  └─ NO → Serve static file from dist/                    │   │
+│  │  1. Check subdomain (github.khương.vn) in redirects.ts   │   │
+│  │  2. Check path (khương.vn/github) in redirects.ts        │   │
+│  │  ├─ Match → Return 301 redirect                          │   │
+│  │  └─ No match → Serve static file from dist/              │   │
 │  └──────────────────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────────────────┘
                               │
@@ -24,10 +25,9 @@
         │  STATIC ASSETS   │  │  HTTP REDIRECT   │
         │   (dist/)        │  │  301 Permanent   │
         │                  │  │                  │
-        │ - index.html     │  │ - github         │
-        │ - apps/...       │  │ - linkedin       │
-        │ - assets/...     │  │ - twitter        │
-        │                  │  │ - cv, blog, etc  │
+        │ - index.html     │  │ - github.khương.vn │
+        │ - apps/...       │  │ - khương.vn/github │
+        │ - assets/...     │  │ - cv, blog, etc  │
         └──────────────────┘  └──────────────────┘
 ```
 

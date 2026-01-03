@@ -245,7 +245,7 @@ khuong.vn/
 
 - **Purpose**: Cloudflare Pages configuration
 - **Settings**:
-  - Project name: khuong-vn
+  - Project name: khuongvn
   - Compatibility date: 2024-01-01
   - Pages build output directory: dist
 
@@ -271,18 +271,19 @@ khuong.vn/
 - **Purpose**: Request routing middleware for Cloudflare Pages
 - **Handler**: `onRequest` function
 - **Logic**:
-  1. Extract pathname from request URL
-  2. Check if path exists in `redirects` object
-  3. If found: Return 301 redirect to destination
-  4. If not found: Pass to next handler (static files)
+  1. Extract hostname and check for subdomain (e.g., `github.khương.vn`)
+  2. If subdomain matches redirect key: Return 301 redirect
+  3. Fall back to path-based redirect (e.g., `khương.vn/github`)
+  4. If no match: Pass to next handler (static files)
+- **Subdomain Support**: Handles both IDN (`khương.vn`) and punycode (`xn--khng-5qa.vn`)
 - **Export**: `PagesFunction` type from Cloudflare Workers
 
 #### `functions/redirects.ts`
 
-- **Purpose**: Short link mapping repository
+- **Purpose**: Short link mapping repository (used for both path and subdomain redirects)
 - **Format**: `Record<string, string>` object
-- **Entries**: 17 redirects (github, github → gh, linkedin → li, twitter → x, email, mail, blog, dev, cv, resume, facebook → fb)
-- **Usage**: Referenced by `_middleware.ts`
+- **Entries**: 12 redirect keys with aliases (github/gh, linkedin/li, facebook/fb, etc.)
+- **Usage**: Referenced by `_middleware.ts` for both `khương.vn/{key}` and `{key}.khương.vn`
 - **Customization**: Edit this file to add/remove redirects
 
 ## Key Dependencies
