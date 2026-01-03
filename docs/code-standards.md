@@ -472,7 +472,7 @@ element.addEventListener('keydown', (e) => {
 
 - No test framework currently configured
 - Manual testing checklist:
-  - All 5 themes render and switch correctly
+  - All 9 themes render and switch correctly
   - Short links redirect with 301 status
   - Lucky Wheel animates smoothly and announces result
   - localStorage persists theme preference

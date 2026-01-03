@@ -199,7 +199,7 @@ Infrastructure Layer
 
 1. Edit `config.json` → `name` field
 2. Run `pnpm build`
-3. All 5 themes automatically update
+3. All 9 themes automatically update
 
 ### Add a New Theme
 
@@ -222,7 +222,7 @@ Infrastructure Layer
 
 ## Testing Checklist
 
-- [ ] All 5 themes render correctly
+- [ ] All 9 themes render correctly
 - [ ] Theme switching works (click indicator)
 - [ ] Theme persists across page reload
 - [ ] Short links redirect with 301 status

@@ -8,7 +8,7 @@ Personal identity landing page with random themes, short link redirects, and min
 
 ## Features
 
-- **5 Random Themes**: Terminal, Brutalist, Gradient, Glass, Neobrutalism
+- **9 Random Themes**: Terminal, Brutalist, Gradient, Glass, Neobrutalism, Retro, Minimal, Cyberpunk, Paper
 - **Short Links**: `khương.vn/github` → redirects to GitHub profile
 - **Mini Apps**: Collection of useful tools at `/apps`
 - **JSON Config**: Easy customization without touching code
@@ -66,7 +66,7 @@ pnpm typecheck     # TypeScript type check
   },
   "analytics": { "goatcounter": "khuongvn" },
   "themes": {
-    "enabled": ["terminal", "brutalist", "gradient", "glass", "neobrutalism"],
+    "enabled": ["terminal", "brutalist", "gradient", "glass", "neobrutalism", "retro", "minimal", "cyberpunk", "paper"],
     "overrides": {}
   },
   "customCSS": ""
@@ -128,7 +128,7 @@ Apps available at `khương.vn/apps/`:
    ```
 
 5. **Configure Custom Domain**:
-   - Cloudflare Dashboard → Workers & Pages → khuong-vn
+   - Cloudflare Dashboard → Workers & Pages → khuongvn
    - Custom domains → Add: `khương.vn`
 
 ### How It Works
@@ -177,7 +177,7 @@ No match? → Serve static from dist/
 
 ## License
 
-ISC
+[Apache-2.0](LICENSE)
 
 ---
 

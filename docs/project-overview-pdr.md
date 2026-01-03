@@ -99,7 +99,7 @@
 
 - **Page Load Time**: < 100ms (Cloudflare edge)
 - **Redirect Success Rate**: 100% for configured short links
-- **Theme Rendering**: All 5 themes display correctly on target devices
+- **Theme Rendering**: All 9 themes display correctly on target devices
 - **Accessibility**: WCAG AA compliance for identity + apps pages
 
 ### Qualitative
@@ -128,7 +128,8 @@
 
 ## Version History
 
-- **v1.0.0** (Current): Initial launch with 5 themes, short links, Lucky Wheel app
+- **v1.0.0**: Initial launch with 5 themes, short links, Lucky Wheel app
+- **v1.1.0** (Current): Added 4 new themes (Retro, Minimal, Cyberpunk, Paper) - total 9 themes
 
 ## Roadmap (Future Enhancements)
 

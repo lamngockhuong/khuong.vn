@@ -35,7 +35,17 @@
     "goatcounter": "khuongvn"
   },
   "themes": {
-    "enabled": ["terminal", "brutalist", "gradient", "glass", "neobrutalism"],
+    "enabled": [
+      "terminal",
+      "brutalist",
+      "gradient",
+      "glass",
+      "neobrutalism",
+      "retro",
+      "minimal",
+      "cyberpunk",
+      "paper"
+    ],
     "overrides": {}
   },
   "customCSS": ""

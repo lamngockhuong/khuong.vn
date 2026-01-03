@@ -106,7 +106,7 @@ HTML: <script src="main-{hash}.js">
 main.ts execution:
    ├─ Import config, themes, styles
    ├─ Check localStorage for lastTheme
-   ├─ renderThemes() - insert all 5 theme HTML to .container
+   ├─ renderThemes() - insert all 9 theme HTML to .container
    ├─ setTheme() - activate random theme (avoid last)
    ├─ Attach click listener to .theme-indicator
    ├─ Inject custom CSS if config.customCSS is set

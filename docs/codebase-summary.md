@@ -86,12 +86,16 @@ khuong.vn/
 - **Exports**:
   - `themeNames`: Map of theme ID → display name
   - `themes`: Map of theme ID → HTML factory function
-- **Theme Generators**:
+- **Theme Generators** (9 themes):
   - `terminal()`: CLI-style with prompt > and lowercase text
   - `brutalist()`: Minimal with dividers and separators
   - `gradient()`: Modern gradient with icon links
   - `glass()`: Glassmorphism card with avatar
   - `neobrutalism()`: Bold border card style
+  - `retro()`: 8-bit pixel art with CRT scanlines
+  - `minimal()`: Clean zen style with fade animation
+  - `cyberpunk()`: Neon glow with gradient border
+  - `paper()`: Hand-drawn notebook style
 - **Pattern**: All use `renderTextLink()` or `renderIconLink()` helpers
 
 #### `src/icons.ts`
@@ -113,6 +117,10 @@ khuong.vn/
   - `.gradient-*`: Gradient theme styles
   - `.glass-*`: Glassmorphism styles
   - `.neobrutalism-*`: Neobrutalism styles
+  - `.retro-*`: Retro/pixel art styles with CRT scanlines
+  - `.minimal-*`: Minimal/zen styles with fade animation
+  - `.cyberpunk-*`: Cyberpunk styles with neon glow
+  - `.paper-*`: Paper/sketch styles with dashed border
   - `.theme-indicator`: Clickable theme switcher
 
 #### `src/shared/theme.css`
@@ -295,7 +303,7 @@ index.html
   ↓
 main.ts ← config.ts, themes.ts, icons.ts, styles.css
   ↓
-themes.ts (renders 5 theme variants)
+themes.ts (renders 9 theme variants)
   ↓
 styles.css (theme-specific CSS)
 

@@ -8,6 +8,10 @@ export const themeNames: Record<string, string> = {
   gradient: "Gradient",
   glass: "Glass",
   neobrutalism: "Neobrutalism",
+  retro: "Retro",
+  minimal: "Minimal",
+  cyberpunk: "Cyberpunk",
+  paper: "Paper",
 };
 
 // Generate link HTML for text-based themes (terminal, brutalist, neobrutalism)
@@ -86,6 +90,53 @@ export const themes: Record<string, () => string> = {
         <div class="nb-divider"></div>
         <p class="nb-role">${config.role}</p>
         <nav class="nb-links">
+          ${config.links.map((l) => renderTextLink(l)).join("\n          ")}
+        </nav>
+      </div>
+    </div>
+  `,
+
+  retro: () => `
+    <div class="retro-content">
+      <div class="retro-box">
+        <div class="retro-scanlines"></div>
+        <h1 class="r-name">${config.name}</h1>
+        <p class="r-role">${config.role}</p>
+        <nav class="r-links">
+          ${config.links.map((l) => renderTextLink(l)).join("\n          ")}
+        </nav>
+      </div>
+    </div>
+  `,
+
+  minimal: () => `
+    <div class="minimal-content">
+      <h1 class="m-name">${config.name}</h1>
+      <p class="m-role">${config.role}</p>
+      <nav class="m-links">
+        ${config.links.map((l) => renderIconLink(l)).join("\n        ")}
+      </nav>
+    </div>
+  `,
+
+  cyberpunk: () => `
+    <div class="cyberpunk-content">
+      <div class="cp-card">
+        <h1 class="cp-name">${config.name}</h1>
+        <p class="cp-role">${config.role}</p>
+        <nav class="cp-links">
+          ${config.links.map((l) => renderIconLink(l)).join("\n          ")}
+        </nav>
+      </div>
+    </div>
+  `,
+
+  paper: () => `
+    <div class="paper-content">
+      <div class="pp-card">
+        <h1 class="pp-name">${config.name}</h1>
+        <p class="pp-role">${config.role}</p>
+        <nav class="pp-links">
           ${config.links.map((l) => renderTextLink(l)).join("\n          ")}
         </nav>
       </div>
