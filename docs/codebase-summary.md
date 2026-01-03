@@ -9,7 +9,7 @@ khuong.vn/
 │   ├── main.ts                    # Identity entry point & theme logic
 │   ├── config.ts                  # TypeScript config types & import
 │   ├── themes.ts                  # Theme renderers (5 factories)
-│   ├── icons.ts                   # SVG icon library (5 icons)
+│   ├── icons.ts                   # SVG icon library (17 icons)
 │   ├── styles.css                 # Identity page styles & theme classes
 │   ├── shared/
 │   │   └── theme.css              # CSS variables & shared theme utilities
@@ -94,7 +94,7 @@ khuong.vn/
 #### `src/icons.ts`
 
 - **Purpose**: SVG icon library
-- **Icons**: globe, github, linkedin, email, apps (grid layout icon)
+- **Icons**: globe, github, linkedin, facebook, x, twitter, youtube, instagram, telegram, discord, tiktok, devto, hashnode, medium, stackoverflow, email, apps
 - **Format**: Inline SVG strings (viewBox="0 0 24 24")
 - **Usage**: Referenced by theme renderers and icon links in config
 
