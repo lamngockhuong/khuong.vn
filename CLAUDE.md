@@ -20,7 +20,7 @@ pnpm sitemap       # Generate sitemap.xml from apps.json
 
 **Multi-page Vite app** with Cloudflare Pages hosting:
 
-- **Identity page** (`/`) - Random theme on each visit from 5 styles (Terminal, Brutalist, Gradient, Glass, Neobrutalism). Theme logic in `src/main.ts`, renderers in `src/themes.ts`.
+- **Identity page** (`/`) - 9 themes (Terminal, Brutalist, Gradient, Glass, Neobrutalism, Retro, Minimal, Cyberpunk, Paper). Supports URL param (`?theme=x`), saved preference, configurable default. Theme logic in `src/main.ts`, renderers in `src/themes.ts`.
 
 - **Mini apps** (`/apps/*`) - Standalone tools. Each app is a separate Vite entry point. Registry in `src/apps/apps.json`.
 

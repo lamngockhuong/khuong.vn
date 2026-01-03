@@ -48,6 +48,8 @@ export interface ThemeOverride {
 
 export interface Themes {
   enabled: string[];
+  defaultTheme?: string;
+  randomTheme?: boolean;
   overrides?: Record<string, ThemeOverride>;
 }
 

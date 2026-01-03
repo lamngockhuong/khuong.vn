@@ -23,6 +23,8 @@
   },
   "themes": {
     "enabled": ["terminal", "brutalist", "gradient", "glass", "neobrutalism"],
+    "defaultTheme": "terminal",
+    "randomTheme": true,
     "overrides": {}
   },
   "customCSS": ""

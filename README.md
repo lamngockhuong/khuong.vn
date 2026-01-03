@@ -8,7 +8,8 @@ Personal identity landing page with random themes, short link redirects, and min
 
 ## Features
 
-- **9 Random Themes**: Terminal, Brutalist, Gradient, Glass, Neobrutalism, Retro, Minimal, Cyberpunk, Paper
+- **9 Themes**: Terminal, Brutalist, Gradient, Glass, Neobrutalism, Retro, Minimal, Cyberpunk, Paper
+- **Theme Selection**: URL param (`?theme=minimal`), saved preference, or configurable default
 - **Short Links**: `khương.vn/github` → redirects to GitHub profile
 - **Mini Apps**: Collection of useful tools at `/apps`
 - **JSON Config**: Easy customization without touching code
@@ -47,6 +48,35 @@ pnpm typecheck     # TypeScript type check
 ### Site Config (`config.json`)
 
 See [`config.json`](./config.json) for current configuration. Copy from [`config.example.json`](./config.example.json) to get started.
+
+### Theme Configuration
+
+```json
+{
+  "themes": {
+    "enabled": ["terminal", "brutalist", "glass", "..."],
+    "defaultTheme": "terminal",
+    "randomTheme": false
+  }
+}
+```
+
+| Option | Description |
+|--------|-------------|
+| `enabled` | List of available themes |
+| `defaultTheme` | Fallback theme (default: `"terminal"`) |
+| `randomTheme` | Enable random theme on visit (default: `true`) |
+
+**Theme Selection Priority:**
+1. URL param: `khương.vn?theme=minimal`
+2. Saved preference (localStorage)
+3. Default theme (if `randomTheme: false`)
+4. Random theme
+
+**CI/CD Override:**
+```bash
+VITE_DEFAULT_THEME=glass pnpm build
+```
 
 ### Short Links (`functions/redirects.ts`)
 

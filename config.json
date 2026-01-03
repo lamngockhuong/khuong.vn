@@ -46,6 +46,8 @@
       "cyberpunk",
       "paper"
     ],
+    "defaultTheme": "terminal",
+    "randomTheme": false,
     "overrides": {}
   },
   "customCSS": ""
