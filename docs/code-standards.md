@@ -299,37 +299,7 @@ body.theme-neobrutalism .neobrutalism-content { display: block; }
 - URLs are absolute (https://) or relative (/path)
 - Arrays and objects follow JSON conventions
 
-```json
-{
-  "name": "Khương",
-  "role": "Anh thợ code",
-  "avatar": {
-    "type": "letter",
-    "value": "K"
-  },
-  "links": [
-    { "label": "Site", "url": "https://khuong.dev", "icon": "globe" },
-    { "label": "GitHub", "url": "https://github.com/lamngockhuong", "icon": "github" },
-    { "label": "LinkedIn", "url": "https://linkedin.com/in/lamngockhuong", "icon": "linkedin" },
-    { "label": "Email", "url": "mailto:hi@khuong.dev", "icon": "email" },
-    { "label": "Apps", "url": "/apps/", "icon": "apps" }
-  ],
-  "seo": {
-    "title": "Khương - Anh thợ code",
-    "description": "Anh thợ code",
-    "canonical": "https://khương.vn",
-    "ogImage": "https://khương.vn/profile.png"
-  },
-  "analytics": {
-    "goatcounter": "khuongvn"
-  },
-  "themes": {
-    "enabled": ["terminal", "brutalist", "gradient", "glass", "neobrutalism"],
-    "overrides": {}
-  },
-  "customCSS": ""
-}
-```
+See [`config.json`](../config.json) for current configuration and [`config.example.json`](../config.example.json) for template.
 
 ### Redirect Mapping Format
 

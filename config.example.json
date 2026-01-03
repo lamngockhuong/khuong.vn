@@ -1,25 +1,25 @@
 {
-  "name": "Khương",
-  "role": "Anh thợ code",
+  "name": "Your Name",
+  "role": "your tagline",
   "avatar": {
     "type": "letter",
-    "value": "K"
+    "value": "Y"
   },
   "links": [
-    { "label": "Site", "url": "https://khuong.dev", "icon": "globe" },
-    { "label": "GitHub", "url": "https://github.com/lamngockhuong", "icon": "github" },
-    { "label": "LinkedIn", "url": "https://linkedin.com/in/lamngockhuong", "icon": "linkedin" },
-    { "label": "Email", "url": "mailto:hi@khuong.dev", "icon": "email" },
+    { "label": "Site", "url": "https://example.com", "icon": "globe" },
+    { "label": "GitHub", "url": "https://github.com/username", "icon": "github" },
+    { "label": "LinkedIn", "url": "https://linkedin.com/in/username", "icon": "linkedin" },
+    { "label": "Email", "url": "mailto:hello@example.com", "icon": "email" },
     { "label": "Apps", "url": "/apps/", "icon": "apps" }
   ],
   "seo": {
-    "title": "Khương - Anh thợ code",
-    "description": "Anh thợ code",
-    "canonical": "https://khương.vn",
-    "ogImage": "https://khương.vn/profile.png"
+    "title": "Your Name - your tagline",
+    "description": "your tagline",
+    "canonical": "https://example.com",
+    "ogImage": "https://example.com/profile.png"
   },
   "analytics": {
-    "goatcounter": "khuongvn"
+    "goatcounter": "your-site-id"
   },
   "themes": {
     "enabled": ["terminal", "brutalist", "gradient", "glass", "neobrutalism"],
