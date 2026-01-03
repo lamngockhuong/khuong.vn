@@ -275,7 +275,7 @@ khuong.vn/
   2. If subdomain matches redirect key: Return 301 redirect
   3. Fall back to path-based redirect (e.g., `khương.vn/github`)
   4. If no match: Pass to next handler (static files)
-- **Subdomain Support**: Handles both IDN (`khương.vn`) and punycode (`xn--khng-5qa.vn`)
+- **Subdomain Support**: Handles punycode (`xn--khng-mgb3g.vn`); each subdomain must be added to Pages Custom Domains
 - **Export**: `PagesFunction` type from Cloudflare Workers
 
 #### `functions/redirects.ts`

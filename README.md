@@ -131,8 +131,8 @@ Apps available at `khương.vn/apps/`:
 
 5. **Configure Custom Domain**:
    - Cloudflare Dashboard → Workers & Pages → khuongvn
-   - Custom domains → Add: `khương.vn`
-   - For subdomain redirects: DNS → Add `*` CNAME record → `khương.vn` (Proxied)
+   - Custom domains → Add: `xn--khng-mgb3g.vn` (punycode for khương.vn)
+   - For subdomain redirects: Add each subdomain individually (e.g., `github.xn--khng-mgb3g.vn`)
 
 ### How It Works
 
