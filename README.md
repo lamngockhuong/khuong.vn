@@ -88,7 +88,9 @@ export const redirects: Record<string, string> = {
 }
 ```
 
-**Usage**: `https://khương.vn/github` → 301 redirect to GitHub
+**Usage** (both work):
+- Path: `https://khương.vn/github` → 301 redirect to GitHub
+- Subdomain: `https://github.khương.vn` → 301 redirect to GitHub
 
 ## Mini Apps
 
@@ -130,17 +132,19 @@ Apps available at `khương.vn/apps/`:
 5. **Configure Custom Domain**:
    - Cloudflare Dashboard → Workers & Pages → khuongvn
    - Custom domains → Add: `khương.vn`
+   - For subdomain redirects: DNS → Add `*` CNAME record → `khương.vn` (Proxied)
 
 ### How It Works
 
 ```bash
-Request to khương.vn/github
+Request to khương.vn/github OR github.khương.vn
          ↓
 Cloudflare Pages
          ↓
 functions/_middleware.ts
          ↓
-Match redirect? → 301 to destination
+Check subdomain → if match, 301 redirect
+Check path → if match, 301 redirect
 No match? → Serve static from dist/
 ```
 
