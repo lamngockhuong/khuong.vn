@@ -7,8 +7,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ```bash
 pnpm dev           # Vite dev server with hot reload
 pnpm dev:pages     # Full Cloudflare Pages local (build + wrangler, tests redirects)
-pnpm build         # TypeScript check + Vite production build
+pnpm build         # Sitemap + TypeScript check + Vite production build
 pnpm deploy        # Build + deploy to Cloudflare Pages
+pnpm lint          # Biome lint check
+pnpm format        # Biome format (auto-fix)
+pnpm check         # Biome lint + format (auto-fix)
+pnpm typecheck     # TypeScript type check only
+pnpm sitemap       # Generate sitemap.xml from apps.json
 ```
 
 ## Architecture

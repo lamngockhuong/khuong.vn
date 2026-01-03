@@ -32,8 +32,14 @@ pnpm dev           # Vite dev server (hot reload)
 pnpm dev:pages     # Cloudflare Pages local (with redirects)
 
 # Build & Deploy
-pnpm build         # Build static site to dist/
+pnpm build         # Sitemap + TypeScript + Vite build
 pnpm deploy        # Build + deploy to Cloudflare Pages
+
+# Code Quality
+pnpm lint          # Biome lint check
+pnpm format        # Biome format (auto-fix)
+pnpm check         # Biome lint + format (auto-fix)
+pnpm typecheck     # TypeScript type check
 ```
 
 ## Configuration
