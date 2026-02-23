@@ -4,7 +4,10 @@ import { themeNames, themes } from "./themes";
 
 // Get theme config
 const enabledThemes = config.themes.enabled;
-const defaultTheme = import.meta.env.VITE_DEFAULT_THEME || config.themes.defaultTheme || "terminal";
+const defaultTheme =
+  import.meta.env.VITE_DEFAULT_THEME ||
+  config.themes.defaultTheme ||
+  "terminal";
 const randomTheme = config.themes.randomTheme !== false;
 
 // Render all theme contents to container
@@ -57,7 +60,9 @@ function getInitialTheme(): string {
 
   // Priority 3: If random disabled, use default
   if (!randomTheme) {
-    return enabledThemes.includes(defaultTheme) ? defaultTheme : enabledThemes[0];
+    return enabledThemes.includes(defaultTheme)
+      ? defaultTheme
+      : enabledThemes[0];
   }
 
   // Priority 4: Random theme

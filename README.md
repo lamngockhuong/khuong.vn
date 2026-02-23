@@ -61,19 +61,21 @@ See [`config.json`](./config.json) for current configuration. Copy from [`config
 }
 ```
 
-| Option | Description |
-|--------|-------------|
-| `enabled` | List of available themes |
-| `defaultTheme` | Fallback theme (default: `"terminal"`) |
-| `randomTheme` | Enable random theme on visit (default: `true`) |
+| Option         | Description                                    |
+| -------------- | ---------------------------------------------- |
+| `enabled`      | List of available themes                       |
+| `defaultTheme` | Fallback theme (default: `"terminal"`)         |
+| `randomTheme`  | Enable random theme on visit (default: `true`) |
 
 **Theme Selection Priority:**
+
 1. URL param: `khương.vn?theme=minimal`
 2. Saved preference (localStorage)
 3. Default theme (if `randomTheme: false`)
 4. Random theme
 
 **CI/CD Override:**
+
 ```bash
 VITE_DEFAULT_THEME=glass pnpm build
 ```
@@ -82,18 +84,19 @@ VITE_DEFAULT_THEME=glass pnpm build
 
 ```typescript
 export const redirects: Record<string, string> = {
-  github: 'https://github.com/lamngockhuong',
-  gh: 'https://github.com/lamngockhuong',
-  linkedin: 'https://linkedin.com/in/lamngockhuong',
-  twitter: 'https://x.com/lamngockhuong',
-  email: 'mailto:hi@khuong.dev',
-  blog: 'https://dev.ngockhuong.com',
-  cv: 'https://cv.ngockhuong.com',
+  github: "https://github.com/lamngockhuong",
+  gh: "https://github.com/lamngockhuong",
+  linkedin: "https://linkedin.com/in/lamngockhuong",
+  twitter: "https://x.com/lamngockhuong",
+  email: "mailto:hi@khuong.dev",
+  blog: "https://dev.ngockhuong.com",
+  cv: "https://cv.ngockhuong.com",
   // Add more...
-}
+};
 ```
 
 **Usage** (both work):
+
 - Path: `https://khương.vn/github` → 301 redirect to GitHub
 - Subdomain: `https://github.khương.vn` → 301 redirect to GitHub
 
@@ -101,8 +104,8 @@ export const redirects: Record<string, string> = {
 
 Apps available at `khương.vn/apps/`:
 
-| App | Description | Path |
-|-----|-------------|------|
+| App               | Description                                     | Path                 |
+| ----------------- | ----------------------------------------------- | -------------------- |
 | Vòng quay may mắn | Random wheel spinner with customizable segments | `/apps/lucky-wheel/` |
 
 ### Adding New Apps
