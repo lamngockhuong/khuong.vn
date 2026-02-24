@@ -354,14 +354,14 @@ https://khương.vn
 
 ### Asset Loading
 
-| Asset Type | Size | Cached | TTL |
-|-----------|------|--------|-----|
-| index.html | ~2KB | No | 0 (revalidate) |
-| app-*.js | ~20KB | Yes | 365 days |
-| app-*.css | ~5KB | Yes | 365 days |
-| /apps/index.html | ~2KB | No | 0 |
-| /apps/lucky-wheel/ | ~3KB | No | 0 |
-| Theme CSS | ~8KB | Yes | 365 days |
+| Asset Type         | Size  | Cached | TTL            |
+| ------------------ | ----- | ------ | -------------- |
+| index.html         | ~2KB  | No     | 0 (revalidate) |
+| app-\*.js          | ~20KB | Yes    | 365 days       |
+| app-\*.css         | ~5KB  | Yes    | 365 days       |
+| /apps/index.html   | ~2KB  | No     | 0              |
+| /apps/lucky-wheel/ | ~3KB  | No     | 0              |
+| Theme CSS          | ~8KB  | Yes    | 365 days       |
 
 ### Redirect Performance
 
@@ -443,7 +443,7 @@ https://khương.vn
 - **Canvas Context**: Error thrown if 2D context unavailable
 - **localStorage**: Gracefully degraded if unavailable
 
-### No**: Structured logging (static site limitation)
+### No\*\*: Structured logging (static site limitation)
 
 - **No**: Error aggregation service (would require backend)
 - **No**: Performance monitoring (built-in browser performance API available)

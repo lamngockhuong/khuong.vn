@@ -160,17 +160,17 @@ Default (hardcoded) → config.json (build-time) → localStorage (runtime)
 
 ## Performance Targets
 
-| Metric | Target | Current |
-|--------|--------|---------|
-| Page Load | < 100ms | Edge cached |
-| Theme Switch | Instant | < 5ms (localStorage) |
-| Wheel Animation | 60 FPS | requestAnimationFrame |
-| Bundle Size (per page) | < 50KB | ~20-30KB minified |
-| Build Time | < 5s | Varies (Vite 7.3.0) |
+| Metric                 | Target  | Current               |
+| ---------------------- | ------- | --------------------- |
+| Page Load              | < 100ms | Edge cached           |
+| Theme Switch           | Instant | < 5ms (localStorage)  |
+| Wheel Animation        | 60 FPS  | requestAnimationFrame |
+| Bundle Size (per page) | < 50KB  | ~20-30KB minified     |
+| Build Time             | < 5s    | Varies (Vite 7.3.0)   |
 
 ## Architecture Layers
 
-```
+```bash
 UI Layer (HTML + CSS)
   ├─ index.html (themes)
   ├─ apps/index.html (listing)

@@ -17,15 +17,15 @@ This document defines coding conventions, patterns, and best practices for the k
 
 ```typescript
 // Default exports for single primary export per file
-export default function renderTheme() { }
+export default function renderTheme() {}
 
 // Named exports for utilities/helpers
-export function getRandomTheme() { }
-export const themes: Record<string, () => string> = { }
+export function getRandomTheme() {}
+export const themes: Record<string, () => string> = {};
 
 // Type exports
-export interface Config { }
-export type ThemeOptions = { }
+export interface Config {}
+export type ThemeOptions = {};
 ```
 
 ### Import Organization
@@ -37,9 +37,9 @@ Order imports in this sequence:
 3. Style imports (CSS files last)
 
 ```typescript
-import { config } from './config'        // Local modules first
-import { themes } from './themes'
-import './styles.css'                    // Styles last
+import { config } from "./config"; // Local modules first
+import { themes } from "./themes";
+import "./styles.css"; // Styles last
 ```
 
 ### Type Annotations
@@ -51,7 +51,7 @@ import './styles.css'                    // Styles last
 ```typescript
 // Good
 function setTheme(theme: string): void {
-  document.body.className = `theme-${theme}`
+  document.body.className = `theme-${theme}`;
 }
 
 // Avoid
@@ -68,11 +68,11 @@ function setTheme(theme) {
 
 ```typescript
 // Good
-const container = document.querySelector('.container')
-if (!container) return
+const container = document.querySelector(".container");
+if (!container) return;
 
 // Avoid
-document.querySelector('.container').innerHTML = '...' // May crash if not found
+document.querySelector(".container").innerHTML = "..."; // May crash if not found
 ```
 
 ### Event Listeners
@@ -82,10 +82,10 @@ document.querySelector('.container').innerHTML = '...' // May crash if not found
 - Remove listeners if component unmounts (not applicable here - single-page)
 
 ```typescript
-const button = document.querySelector('.spin-button')
-button?.addEventListener('click', () => {
-  wheel.spin()
-})
+const button = document.querySelector(".spin-button");
+button?.addEventListener("click", () => {
+  wheel.spin();
+});
 ```
 
 ### Error Handling
@@ -94,8 +94,8 @@ button?.addEventListener('click', () => {
 - Throw descriptive errors for development
 
 ```typescript
-const ctx = canvas.getContext('2d')
-if (!ctx) throw new Error('Canvas 2D context not supported')
+const ctx = canvas.getContext("2d");
+if (!ctx) throw new Error("Canvas 2D context not supported");
 ```
 
 ### localStorage Usage
@@ -105,11 +105,11 @@ if (!ctx) throw new Error('Canvas 2D context not supported')
 
 ```typescript
 // Good - prefixed key
-localStorage.setItem('theme:selected', 'terminal')
-const theme = localStorage.getItem('theme:selected')
+localStorage.setItem("theme:selected", "terminal");
+const theme = localStorage.getItem("theme:selected");
 
 // Wheel segments
-const segments = JSON.parse(localStorage.getItem('wheel:segments') || '[]')
+const segments = JSON.parse(localStorage.getItem("wheel:segments") || "[]");
 ```
 
 ### Comments
@@ -120,7 +120,7 @@ const segments = JSON.parse(localStorage.getItem('wheel:segments') || '[]')
 ```typescript
 // Good - explains intent
 // Avoid last theme to ensure visual variety on next visit
-const lastTheme = localStorage.getItem('lastTheme')
+const lastTheme = localStorage.getItem("lastTheme");
 
 /**
  * Spin the wheel and animate rotation
@@ -131,7 +131,7 @@ function spin(): void {
 }
 
 // Avoid - obvious from code
-const x = 5 // set x to 5
+const x = 5; // set x to 5
 ```
 
 ## CSS/Styling Conventions
@@ -160,7 +160,7 @@ const x = 5 // set x to 5
   --spacing-md: 1rem;
   --spacing-lg: 2rem;
 
-  --font-family-sans: 'Inter', sans-serif;
+  --font-family-sans: "Inter", sans-serif;
   --font-size-base: 1rem;
   --font-size-lg: 1.25rem;
 
@@ -212,11 +212,21 @@ body.theme-gradient .gradient-content {
 }
 
 /* Show only active theme */
-body.theme-terminal .terminal-content { display: block; }
-body.theme-brutalist .brutalist-content { display: block; }
-body.theme-gradient .gradient-content { display: block; }
-body.theme-glass .glass-content { display: block; }
-body.theme-neobrutalism .neobrutalism-content { display: block; }
+body.theme-terminal .terminal-content {
+  display: block;
+}
+body.theme-brutalist .brutalist-content {
+  display: block;
+}
+body.theme-gradient .gradient-content {
+  display: block;
+}
+body.theme-glass .glass-content {
+  display: block;
+}
+body.theme-neobrutalism .neobrutalism-content {
+  display: block;
+}
 ```
 
 ### Responsive Design
@@ -256,7 +266,9 @@ body.theme-neobrutalism .neobrutalism-content { display: block; }
 ```css
 /* Good - GPU-accelerated properties */
 .theme-indicator {
-  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition:
+    transform 0.2s ease-out,
+    opacity 0.2s ease-out;
 }
 
 .theme-indicator:hover {
@@ -279,15 +291,15 @@ body.theme-neobrutalism .neobrutalism-content { display: block; }
 ```css
 /* Good */
 .card {
-  padding: 1rem;           /* rem for scalability */
-  border: 1px solid #333;  /* px for precision */
-  width: 100%;            /* % for fluidity */
+  padding: 1rem; /* rem for scalability */
+  border: 1px solid #333; /* px for precision */
+  width: 100%; /* % for fluidity */
 }
 
 /* Avoid */
 .card {
-  padding: 16px;          /* px instead of rem */
-  font-size: 14px;        /* px instead of rem */
+  padding: 16px; /* px instead of rem */
+  font-size: 14px; /* px instead of rem */
 }
 ```
 
@@ -305,10 +317,10 @@ See [`config.json`](../config.json) for current configuration and [`config.examp
 
 ```typescript
 export const redirects: Record<string, string> = {
-  github: 'https://github.com/lamngockhuong',
-  gh: 'https://github.com/lamngockhuong',  // Aliases supported
-  linkedin: 'https://linkedin.com/in/lamngockhuong',
-}
+  github: "https://github.com/lamngockhuong",
+  gh: "https://github.com/lamngockhuong", // Aliases supported
+  linkedin: "https://linkedin.com/in/lamngockhuong",
+};
 ```
 
 ## HTML Standards
@@ -328,9 +340,7 @@ export const redirects: Record<string, string> = {
 </nav>
 
 <!-- Avoid -->
-<div onclick="navigate()">
-  Click me
-</div>
+<div onclick="navigate()">Click me</div>
 ```
 
 ### SEO Placeholders
@@ -355,21 +365,21 @@ export const themes: Record<string, () => string> = {
       <!-- theme-specific HTML -->
     </div>
   `,
-}
+};
 ```
 
 ### Canvas Component Pattern
 
 ```typescript
 export class CanvasComponent {
-  private canvas: HTMLCanvasElement
-  private ctx: CanvasRenderingContext2D
+  private canvas: HTMLCanvasElement;
+  private ctx: CanvasRenderingContext2D;
 
   constructor(canvas: HTMLCanvasElement) {
-    this.canvas = canvas
-    const ctx = canvas.getContext('2d')
-    if (!ctx) throw new Error('2D context not available')
-    this.ctx = ctx
+    this.canvas = canvas;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) throw new Error("2D context not available");
+    this.ctx = ctx;
   }
 
   private setupCanvas(): void {
@@ -419,11 +429,11 @@ export class CanvasComponent {
 
 ```typescript
 // Good - supporting Enter/Space for buttons
-element.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter' || e.key === ' ') {
-    handleAction()
+element.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" || e.key === " ") {
+    handleAction();
   }
-})
+});
 ```
 
 ### Screen Readers
@@ -455,7 +465,7 @@ element.addEventListener('keydown', (e) => {
 - Reference issue numbers: "fix: resolve wheel animation #42"
 - Keep commits atomic and focused
 
-```
+```bash
 feat: add new theme
 fix: resolve redirect loop
 refactor: simplify theme selection
